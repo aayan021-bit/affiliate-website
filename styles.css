@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-img {
-    width: 160px;
+    width: 90px;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
