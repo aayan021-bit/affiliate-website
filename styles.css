@@ -61,3 +61,20 @@ h1, h1, h1, h1, h1, h1 {
 .product a:hover {
     background-color: #ff1f35;
 }
+footer {
+  background-color: #1a1a1a;
+  padding: 30px 0;
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+}
+
+.contact-section a {
+  color: #ff5555;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
