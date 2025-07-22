@@ -1,0 +1,1 @@
+console.log("Affiliate site loaded!");
