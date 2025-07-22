@@ -1,17 +1,16 @@
+
 body {
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White default text */
+    background-color: #000000;
+    color: #ffffff;
     font-family: Arial, sans-serif;
     padding: 20px;
     text-align: center;
 }
 
-/* Make sure ALL headings are white */
 h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
 }
 
-/* Product section layout */
 .products {
     display: flex;
     flex-wrap: wrap;
@@ -20,7 +19,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 30px;
 }
 
-/* Each product card */
 .product {
     background-color: #111111;
     color: #ffffff;
@@ -31,7 +29,6 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
-/* Product image */
 .product-img {
     width: 100%;
     height: auto;
@@ -41,12 +38,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 
-/* Paragraph text inside product */
 .product p {
     color: #dddddd;
 }
 
-/* Buy Now button */
 .product a {
     display: inline-block;
     margin-top: 10px;
