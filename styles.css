@@ -77,4 +77,34 @@ footer {
 .contact-section a:hover {
   text-decoration: underline;
 }
+.cart-section {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+.cart-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-section li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #2a2a2a;
+  border-radius: 5px;
+}
+
+.cart-section button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 
