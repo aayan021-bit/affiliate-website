@@ -5,107 +5,84 @@
   <meta charset="UTF-8">
   <title>Top Deals by King</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
 </head>
 <body>
 
   <header>
-    <h1>🔥 Top Deals by King 🔥</h1>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search products...">
-    </div>
+    <h1>🔥 Top Deals by King</h1>
     <nav>
-      <ul id="categoryFilter">
-        <li data-category="all">All</li>
-        <li data-category="mobiles">Mobiles</li>
-        <li data-category="laptops">Laptops</li>
-        <li data-category="accessories">Accessories</li>
-        <li data-category="fashion">Fashion</li>
+      <ul>
+        <li><strong>📱 Electronics</strong></li>
+        <li>Mobiles</li>
+        <li>Laptops</li>
+        <li>Accessories</li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <div class="product-grid" id="productGrid">
+    <div class="product-grid">
 
-      <div class="product-card" data-category="mobiles">
-        <img src="iPhone 15.jpg" alt="iPhone 15">
-        <h3>iPhone 15(256gb)</h3>
-        <p>₹70,800</p>
+      <div class="product-card">
+        <img src="images/iphone15.jpg" alt="iPhone 15" class="product-image">
+        <h3>iPhone 15</h3>
         <div class="button-group">
-          <button onclick="addToCart('iPhone 15', 70,800)">🛒 Add to Cart</button>
-          <a href="https://amzn.in/d/7CIeJPX" target="_blank">Buy Now</a>
+          <button class="add-to-cart" onclick="addToCart('iPhone 15')">🛒 Add to Cart</button>
+          <a href="https://www.amazon.in/" class="buy-now" target="_blank">🔴 Buy Now</a>
         </div>
       </div>
 
-      <div class="product-card" data-category="mobiles">
-        <img src="iPhone 16.jpg" alt="iPhone 16">
-        <h3>iPhone 16(126gb)</h3>
-        <p>₹72,400</p>
+      <div class="product-card">
+        <img src="images/iphone14.jpg" alt="iPhone 14" class="product-image">
+        <h3>iPhone 14</h3>
         <div class="button-group">
-          <button onclick="addToCart('iPhone 16', 72,400)">🛒 Add to Cart</button>
-          <a href="https://amzn.in/d/2Mq7q0c" target="_blank">Buy Now</a>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="laptops">
-        <img src="macbookm4.jpg" alt="MacBook Air M4">
-        <h3>MacBook Air M4 13"</h3>
-        <p>₹1,19,900</p>
-        <div class="button-group">
-          <button onclick="addToCart('MacBook Air M4', 1,19,900">🛒 Add to Cart</button>
-          <a href="https://www.amazon.in/dp/B0DZD8QJBH?ref_=cm_sw_r_cp_ud_dp_KK171XA319E4CM1A57XN" target="_blank">Buy Now</a>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="laptops">
-        <img src="dell1.jpg" alt="Dell Inspiron">
-        <h3>Dell Inspiron 3530</h3>
-        <p>₹57,490</p>
-        <div class="button-group">
-          <button onclick="addToCart('Dell Inspiron 3530', 57,490)">🛒 Add to Cart</button>
-          <a href="https://amzn.in/d/6COhPJh" target="_blank">Buy Now</a>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="accessories">
-        <img src="headphones sony.jpg" alt="Sony Headphones">
-        <h3>Sony Headphones</h3>
-        <p>₹3,989</p>
-        <div class="button-group">
-          <button onclick="addToCart('Sony Headphones', 3,989)">🛒 Add to Cart</button>
-          <a href="https://amzn.in/d/cWUjalv" target="_blank">Buy Now</a>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="fashion">
-        <img src="shoe1.jpg" alt="Running Shoes">
-        <h3>Nike Running Shoes</h3>
-        <p>₹12,236</p>
-        <div class="button-group">
-          <button onclick="addToCart('Nike Running Shoes', 12,236)">🛒 Add to Cart</button>
-          <a href="https://amzn.in/d/fOQFmZN" target="_blank">Buy Now</a>
+          <button class="add-to-cart" onclick="addToCart('iPhone 14')">🛒 Add to Cart</button>
+          <a href="https://www.amazon.in/" class="buy-now" target="_blank">🔴 Buy Now</a>
         </div>
       </div>
 
     </div>
 
     <div class="cart-section">
-      <h2>🛒 Your Cart (<span id="cart-count">0</span> items) - ₹<span id="cart-total">0</span></h2>
+      <h2>🛒 Your Cart</h2>
       <ul id="cart-items"></ul>
       <p id="cart-empty">Your cart is empty.</p>
     </div>
-
-   <footer>
-  <div class="contact-section">
-    <h2>📞 Contact Us</h2>
-    <p>Email: <a href="aayanshaikh8459249906@gmail.com">help@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/_aayanking_?igsh=MWtzZmZ1eW4xbzNnaQ%3D%3D&utm_source=qr" target="_blank">Instagram</a></p>
-    <p>WhatsApp: <a href="https://wa.me/919529644732" target="_blank">+91-whatsapp</a></p>
-  </div>
-   </footer>
-    <button onclick="scrollToTop()" id="scrollTopBtn">⬆️</button>
   </main>
+
+  <script>
+    const cartItems = [];
+
+    function addToCart(productName) {
+      cartItems.push(productName);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById("cart-items");
+      const emptyText = document.getElementById("cart-empty");
+
+      cartList.innerHTML = "";
+      if (cartItems.length === 0) {
+        emptyText.style.display = "block";
+        return;
+      }
+
+      emptyText.style.display = "none";
+      cartItems.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.textContent = item + " ";
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.onclick = () => {
+          cartItems.splice(index, 1);
+          updateCart();
+        };
+        li.appendChild(removeBtn);
+        cartList.appendChild(li);
+      });
+    }
+  </script>
 
 </body>
 </html>
