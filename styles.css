@@ -11,20 +11,15 @@ body {
     gap: 30px;
     margin-top: 20px;
 }
-.product {
-    background: #111;
-    padding: 20px;
-    border: 1px solid #444;
-    border-radius:8px;
-    width: 250px;
-    max-width: 90%;
-}
 .product-img {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     width: 100%;
     height: auto;
     max-height: 200px;
     object-fit: contain;
-    border-radius:6px;
     margin-bottom:10px;
 }
 .product a {
@@ -35,8 +30,4 @@ body {
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s ease;
-}
-.product a:hover{
-    background: #ff1f35;
 }    
