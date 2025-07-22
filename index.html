@@ -1,138 +1,88 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aayan Deals</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Top Deals by King</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🔥 Top Deals by King</h1>
 
-  <!-- Category: Electronics -->
-  <div class="category">
-    <h2>📱 Electronics</h2>
+  <header>
+    <h1>🔥 Top Deals by King</h1>
+    <nav>
+      <ul>
+        <li><strong>📱 Electronics</strong></li>
+        <li>Mobiles</li>
+        <li>Laptops</li>
+        <li>Accessories</li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Sub-category: Mobiles -->
-    <div class="sub-category">
-      <h3>Mobiles</h3>
-      <div class="products">
-        <div class="product">
-          <img src="iPhone 15.jpg" alt="iPhone 15"class="product-image">
-          <p>iPhone15</p>
-          <a href="
-            https://amzn.in/d/6kiRfRQ" target="_blank"><button class="add-to-cart" onclick="addToCart('iPhone 15')">Add to Cart</button>
-</a>
-        </div>
-        <div class="product">
-          <img src="iPhone 16.jpg" alt="iPhone 16" class="product-image">
-          <p>iPhone16</p>
-          <a href="https://amzn.in/d/3XSWNQz" target="_blank"><button class="add-to-cart" onclick="addToCart('iPhone 16')">Add to Cart</button>
-</a>
-        </div>
-      </div>
-    </div>
+  <main>
+    <div class="product-grid">
 
-    <!-- Sub-category: Headphones -->
-    <div class="sub-category">
-      <h3>Headphones</h3>
-      <div class="products">
-        <div class="product">
-          <img src="BoatRockerz.jpg" alt="BoatRockerz" class="product-image">
-          <p>boAt Rockerz 450</p>
-          <a href="https://amzn.in/d/e2ztGrh" target="_blank"><button class="add-to-cart" onclick="addToCart('boAt Rockerz 450')">Add to Cart</button>
-</a>
+      <div class="product-card">
+        <img src="images/iphone15.jpg" alt="iPhone 15" class="product-image">
+        <h3>iPhone 15</h3>
+        <div class="button-group">
+          <button class="add-to-cart" onclick="addToCart('iPhone 15')">🛒 Add to Cart</button>
+          <a href="https://www.amazon.in/" class="buy-now" target="_blank">🔴 Buy Now</a>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Category: Fashion -->
-  <div class="category">
-    <h2>🧥 Fashion</h2>
-
-    <!-- Sub-category: Shoes -->
-    <div class="sub-category">
-      <h3>Shoes</h3>
-      <div class="products">
-        <div class="product">
-          <img src="shoe1.jpg" alt="Shoe1" class="product-image">
-          <p>Nike Men Running Shoes</p>
-          <a href="https://amzn.in/d/30bNyLx" target="_blank"><button class="add-to-cart" onclick="addToCart('Nike Men Running Shoes')">Add to Cart</button>
-</a>
+      <div class="product-card">
+        <img src="images/iphone14.jpg" alt="iPhone 14" class="product-image">
+        <h3>iPhone 14</h3>
+        <div class="button-group">
+          <button class="add-to-cart" onclick="addToCart('iPhone 14')">🛒 Add to Cart</button>
+          <a href="https://www.amazon.in/" class="buy-now" target="_blank">🔴 Buy Now</a>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Category: Beauty -->
-  <div class="category">
-    <h2>💅🏻 Beauty</h2>
 
-    <!-- Sub-category: 
-    Skin care-->
-    <div class="sub-category">
-      <h3>facewash & scrubs</h3>
-      <div class="products">
-        <div class="product">
-          <img src="Simple Fw.jpg" alt="Simple Fw"class="product-image">
-          <p>Simple Kind To Skin Refreshing Facial Wash 150 ml</p>
-          <a href="https://amzn.in/d/8qMkSAF" target="_blank"><button class="add-to-cart" onclick="addToCart('Face Wash 150ml')">Add to Cart</button>
-</a>
-        </div>
-      </div>
     </div>
-  </div>
-  
-  <div class="cart-section">
-  <h2>🛒 Your Cart</h2>
-  <ul id="cart-items"></ul>
-  <p id="cart-empty">Your cart is empty.</p>
-</div>
-  
+
+    <div class="cart-section">
+      <h2>🛒 Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p id="cart-empty">Your cart is empty.</p>
+    </div>
+  </main>
+
   <script>
-  const cartItems = [];
+    const cartItems = [];
 
-  function addToCart(productName) {
-    cartItems.push(productName);
-    updateCart();
-  }
-
-  function updateCart() {
-    const cartList = document.getElementById("cart-items");
-    const emptyText = document.getElementById("cart-empty");
-
-    cartList.innerHTML = ""; // Clear current cart
-    if (cartItems.length === 0) {
-      emptyText.style.display = "block";
-      return;
+    function addToCart(productName) {
+      cartItems.push(productName);
+      updateCart();
     }
 
-    emptyText.style.display = "none";
-    cartItems.forEach((item, index) => {
-      const li = document.createElement("li");
-      li.textContent = item + " ";
-      const removeBtn = document.createElement("button");
-      removeBtn.textContent = "Remove";
-      removeBtn.onclick = () => {
-        cartItems.splice(index, 1);
-        updateCart();
-      };
-      li.appendChild(removeBtn);
-      cartList.appendChild(li);
-    });
-  }
-</script>
+    function updateCart() {
+      const cartList = document.getElementById("cart-items");
+      const emptyText = document.getElementById("cart-empty");
 
+      cartList.innerHTML = "";
+      if (cartItems.length === 0) {
+        emptyText.style.display = "block";
+        return;
+      }
 
-
-  <footer>
-  <div class="contact-section">
-    <h2>📞 9529644732</h2>
-    <p>Email: <a href="mailto:aayanshaikh8459249906@gmail.com">aayanshaikh8459249906@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/_aayanking_?igsh=MWtzZmZ1eW4xbzNnaQ%3D%3D&utm_source=qr" target="_blank">@_aayanking_</a></p>
-    <p>WhatsApp: <a href="https://wa.me/919529644732" target="_blank">+91-9529644732</a></p>
-  </div>
-</footer>
-
+      emptyText.style.display = "none";
+      cartItems.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.textContent = item + " ";
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.onclick = () => {
+          cartItems.splice(index, 1);
+          updateCart();
+        };
+        li.appendChild(removeBtn);
+        cartList.appendChild(li);
+      });
+    }
+  </script>
 
 </body>
 </html>
