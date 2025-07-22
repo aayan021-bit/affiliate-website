@@ -1,32 +1,66 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: #000; /* Black background */
+    color: #ffffff; /* Default text color */
     padding: 20px;
     text-align: center;
 }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+/* Paragraphs and links */
+p {
+    color: #dddddd;
+}
+
+a {
+    color: #ffffff;
+}
+
+/* Product layout */
 .products {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
     margin-top: 20px;
 }
-.product-img {
-    background: white;
+
+/* Product card */
+.product {
+    background: #111;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #444;
     border-radius: 8px;
+    width: 250px;
+    max-width: 90%;
+}
+
+/* Product image */
+.product-img {
     width: 100%;
     height: auto;
     max-height: 200px;
     object-fit: contain;
-    margin-bottom:10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
+
+/* Buy button */
 .product a {
     display: inline-block;
     margin-top: 10px;
+    background: #e50914; /* Netflix red */
     color: white;
-    background: #e50914;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-}    
+    transition: background 0.3s ease;
+}
+
+.product a:hover {
+    background: #ff1f35;
+}
