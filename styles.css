@@ -11,12 +11,16 @@ body {
     gap: 30px;
     margin-top: 20px;
 }
-.product {
+.product-img {
     background: white;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 250px;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom:10px;
 }
 .product a {
     display: inline-block;
@@ -26,12 +30,4 @@ body {
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-}
-.product-img {
-    width: 100%;
-    height: auto;
-    max-height: 200px; /* limits the height */
-    object-fit: contain; /* scales image without cutting */
-    border-radius: 6px;
-    margin-bottom: 10px;
 }
