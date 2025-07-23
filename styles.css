@@ -39,14 +39,14 @@ header, footer {
 }
 
 .product-card .buttons {
-  margin-top: 10px;
+  margin-top: 100px;
 }
 
 .product-card button, .product-card a {
-  padding: 8px 12px;
-  margin: 5px;
+  padding: 16px 24px;
+  margin: 50px;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   text-decoration: none;
   color: white;
   background-color: #e60023;
