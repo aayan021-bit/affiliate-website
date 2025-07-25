@@ -18,9 +18,7 @@ function renderProducts() {
 
     const filtered = products.filter(p => 
         (currentCategory === 'All' || p.category === currentCategory) &&
-        p.name.toLowerCase().includes(search) &&
-        p.price <= maxPrice
-    );
+        p.name.toLowerCase().includes(search);
 
     filtered.forEach(p => {
         const div = document.createElement('div');
